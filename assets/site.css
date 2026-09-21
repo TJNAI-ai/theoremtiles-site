@@ -60,7 +60,7 @@ h1{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:
 .card p{margin:0;color:var(--muted);font-size:.98rem}
 .steps{display:grid;gap:1rem}
 .step{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
-.step .badge{width:2.4rem;height:2.4rem;border-radius:12px;display:grid;place-items:center;background:var(--moss);color:var(--cream);font-weight:800}
+.step .badge{width:2.4rem;height:2.4rem;border-radius:12px;display:grid;place-items:center;background:var(--moss);color:#f4e8d0;font-weight:800}
 .prose{max-width:720px}
 .prose h1{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);color:var(--moss);margin:0 0 .5rem}
 .prose h2{font-family:var(--display);font-size:1.4rem;margin:2rem 0 .55rem;color:var(--moss)}
