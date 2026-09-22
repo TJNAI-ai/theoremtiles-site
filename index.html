@@ -4,20 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Theorem Tiles — math that flips the picture</title>
-<meta name="description" content="A kids puzzle where every tile starts face-down. Solve the math, flip it over, drag it home, and snap the keystone. Quiet, beautiful, built for curious minds.">
+<meta name="description" content="A quiet iOS mosaic puzzle. Every tile starts face-down. Solve the math, flip it over, drag it home, snap the keystone.">
 <link rel="canonical" href="https://theoremtiles.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Theorem Tiles">
 <meta property="og:title" content="Theorem Tiles — math that flips the picture">
-<meta property="og:description" content="Solve → flip → drag → snap. A mosaic puzzle powered by real math.">
+<meta property="og:description" content="Solve → flip → drag → snap. A dusk-grove mosaic powered by real math.">
 <meta property="og:url" content="https://theoremtiles.app/">
+<meta name="theme-color" content="#070d0a">
 <link rel="icon" href="/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@450;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&family=Source+Sans+3:wght@450;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <nav class="nav"><div class="wrap">
-  <a class="brand" href="/"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1A2E24"/><rect x="10" y="10" width="20" height="20" rx="4" fill="#C45C26"/><rect x="34" y="10" width="20" height="20" rx="4" fill="#E8C56A"/><rect x="10" y="34" width="20" height="20" rx="4" fill="#7CB68A"/><rect x="34" y="34" width="20" height="20" rx="4" fill="#F4E8D0"/></svg>Theorem Tiles</a>
+  <a class="brand" href="/"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0B1612"/><rect x="8" y="8" width="22" height="22" rx="5" fill="#C45C26"/><rect x="34" y="8" width="22" height="22" rx="5" fill="#E8C56A"/><rect x="8" y="34" width="22" height="22" rx="5" fill="#3D7A56"/><rect x="34" y="34" width="22" height="22" rx="5" fill="#F4E8D0"/></svg>Theorem Tiles</a>
   <a class="hide-sm" href="#play">How it plays</a>
   <a class="hide-sm" href="#groves">Groves</a>
   <a class="hide-sm" href="#grownups">Grown-ups</a>
@@ -28,62 +31,108 @@
 
 <header class="hero wrap">
   <div>
-    <div class="eyebrow">iOS puzzle · math unlocks art</div>
-    <h1>Every tile hides a picture. Math turns them over.</h1>
-    <p class="lede">Kids solve a quick problem, flip the tile, drag it into place, and feel the keystone snap. It’s a mosaic you earn — quiet, tactile, and genuinely clever.</p>
+    <div class="eyebrow">iOS · Moss Lantern puzzle</div>
+    <h1>Face-down tiles. <span class="glow">Math</span> turns the light on.</h1>
+    <p class="lede">Kids solve a short problem, flip the tile, drag it into the mosaic, and feel the keystone snap. A dusk-grove puzzle you earn with your hands — quiet, tactile, a little bit magical.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#play">See the loop</a>
       <a class="btn btn-ghost" href="/privacy/">Privacy first</a>
     </div>
-    <p class="fine">Built by TJNAI · Bundle <code>com.tjnai.theoremtiles</code> · No ads in the kid path</p>
+    <p class="fine">TJNAI.ai LLC · Bundle <code>com.tjnai.theoremtiles</code> · No ads in the kid path</p>
   </div>
-  <div class="board" aria-hidden="true">
-    <div class="tile back" style="--r:-4deg;--d:.1s">?</div>
-    <div class="tile face" style="--r:3deg;--d:.3s">7</div>
-    <div class="tile moss" style="--r:-2deg;--d:.2s">✦</div>
-    <div class="tile clay" style="--r:5deg;--d:.45s">=</div>
-    <div class="tile back" style="--r:2deg;--d:.15s">?</div>
-    <div class="tile face" style="--r:-3deg;--d:.35s">3</div>
-    <div class="tile moss" style="--r:4deg;--d:.25s">◇</div>
-    <div class="tile back" style="--r:-5deg;--d:.4s">?</div>
-    <div class="tile clay" style="--r:1deg;--d:.05s">+</div>
+  <div class="stage" aria-hidden="true">
+    <div class="tile back" style="--r:-5deg;--d:.05s">?</div>
+    <div class="tile face" style="--r:3deg;--d:.25s">7</div>
+    <div class="tile moss" style="--r:-2deg;--d:.15s">✦</div>
+    <div class="tile clay" style="--r:6deg;--d:.4s">=</div>
+    <div class="tile back" style="--r:2deg;--d:.1s">?</div>
+    <div class="tile face" style="--r:-4deg;--d:.35s">3</div>
+    <div class="tile moss" style="--r:4deg;--d:.2s">◇</div>
+    <div class="tile back" style="--r:-3deg;--d:.45s">?</div>
+    <div class="tile clay" style="--r:1deg;--d:0s"><span class="mark">SNAP</span></div>
   </div>
 </header>
 
-<section class="section alt" id="play">
+<section class="section band" id="play">
   <div class="wrap">
-    <h2>The play loop kids feel in their hands</h2>
-    <div class="grid3" style="margin-top:1.5rem">
-      <article class="card"><div class="n">01 · SOLVE</div><h3>Math opens the tile</h3><p>A short problem gates each face-down piece. Right answer? It flips — art revealed.</p></article>
-      <article class="card"><div class="n">02 · PLACE</div><h3>Drag into the mosaic</h3><p>Slide the piece home. Edges whisper. The board becomes a picture you built.</p></article>
-      <article class="card"><div class="n">03 · SNAP</div><h3>Keystone locks it in</h3><p>The last fit snaps with a soft keystone click. Progress that feels physical.</p></article>
+    <h2>Three beats. One hush.</h2>
+    <p class="lede">No carnival noise — just solve, reveal, and lock the picture into place.</p>
+    <div class="loop-rail">
+      <div class="beat">
+        <div class="glyph">01</div>
+        <h3 style="margin:.2rem 0 .4rem;font-family:var(--display);color:var(--cream)">Solve</h3>
+        <p style="margin:0;color:var(--mist);font-size:.98rem">A short problem gates each face-down piece. Right answer? The tile wakes.</p>
+      </div>
+      <div class="beat">
+        <div class="glyph">02</div>
+        <h3 style="margin:.2rem 0 .4rem;font-family:var(--display);color:var(--cream)">Flip &amp; place</h3>
+        <p style="margin:0;color:var(--mist);font-size:.98rem">Art appears. Drag it home. Edges settle like clay finding clay.</p>
+      </div>
+      <div class="beat">
+        <div class="glyph">03</div>
+        <h3 style="margin:.2rem 0 .4rem;font-family:var(--display);color:var(--cream)">Keystone snap</h3>
+        <p style="margin:0;color:var(--mist);font-size:.98rem">The last fit clicks soft and sure — progress you can feel.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="groves">
   <div class="wrap">
-    <h2>Groves to grow into</h2>
-    <p class="lede" style="max-width:40rem">From the first spark grove to moss lantern hush, packs stay calm and gorgeous — more craft than carnival.</p>
-    <div class="steps" style="margin-top:1.5rem">
-      <div class="step"><div class="badge">1</div><div><h3 style="margin:.15rem 0 .35rem;color:var(--moss)">Spark Grove</h3><p class="fine" style="margin:0">Learn flip, drag, and snap without noise.</p></div></div>
-      <div class="step"><div class="badge">2</div><div><h3 style="margin:.15rem 0 .35rem;color:var(--moss)">Moss Lantern</h3><p class="fine" style="margin:0">Deeper hush, richer chrome, still kid-clear.</p></div></div>
-      <div class="step"><div class="badge">∞</div><div><h3 style="margin:.15rem 0 .35rem;color:var(--moss)">More groves ahead</h3><p class="fine" style="margin:0">We’re inventing the coolest math puzzle on the phone — one polished beat at a time.</p></div></div>
+    <h2>Groves that deepen, never shout</h2>
+    <p class="lede">From first spark to moss lantern hush — packs stay calm, crafted, and kid-clear.</p>
+    <div class="grove-list">
+      <div class="grove">
+        <div class="badge">1</div>
+        <div>
+          <h3>Spark Grove</h3>
+          <p>Learn flip, drag, and snap without noise.</p>
+        </div>
+        <div class="tag">Open</div>
+      </div>
+      <div class="grove">
+        <div class="badge">2</div>
+        <div>
+          <h3>Moss Lantern</h3>
+          <p>Deeper dusk, richer ember, still crystal-clear for kids.</p>
+        </div>
+        <div class="tag">Inventing</div>
+      </div>
+      <div class="grove">
+        <div class="badge">∞</div>
+        <div>
+          <h3>More groves ahead</h3>
+          <p>We’re polishing the coolest math puzzle on a phone — one quiet residual at a time.</p>
+        </div>
+        <div class="tag">Soon</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section alt" id="grownups">
-  <div class="wrap grid3">
-    <article class="card"><div class="n">GROWN-UPS</div><h3>PIN + Face ID vault</h3><p>Settings that matter stay behind a Grown-ups gate. Kids stay in the puzzle.</p></article>
-    <article class="card"><div class="n">SOFT UNLOCK</div><h3>StoreKit, not pressure</h3><p>Optional unlock for more groves. The free path stays generous and beautiful.</p></article>
-    <article class="card"><div class="n">PRIVACY</div><h3>On-device first</h3><p>Progress lives on the device. Read the full policy anytime.</p></article>
+<section class="section band" id="grownups">
+  <div class="wrap">
+    <h2>Built for families</h2>
+    <div class="grid3">
+      <article class="card"><div class="n">GROWN-UPS</div><h3>PIN + Face ID vault</h3><p>Settings that matter stay behind a Grown-ups gate. Kids stay in the puzzle.</p></article>
+      <article class="card"><div class="n">SOFT UNLOCK</div><h3>StoreKit, not pressure</h3><p>Optional unlock for more groves. The free path stays generous and beautiful.</p></article>
+      <article class="card"><div class="n">PRIVACY</div><h3>On-device first</h3><p>Progress lives on the device. Short, plain-English policy — PickleRecord-simple.</p></article>
+    </div>
+    <div class="cta-band" style="margin-top:2.2rem">
+      <h2>Coming to TestFlight</h2>
+      <p>Theorem Tiles is in active invent + App Store prep. When the dusk-grove is ready, you’ll feel it.</p>
+      <a class="btn btn-primary" href="mailto:hello@tjnai.ai?subject=Theorem%20Tiles%20TestFlight">Ask about TestFlight</a>
+    </div>
   </div>
 </section>
 
 <footer><div class="wrap">
   <div>© <span id="y"></span> TJNAI.ai LLC · Theorem Tiles</div>
-  <div style="display:flex;gap:1rem"><a href="/privacy/">Privacy</a><a href="/support/">Support</a><a href="mailto:hello@tjnai.ai">hello@tjnai.ai</a></div>
+  <div style="display:flex;gap:1.1rem;flex-wrap:wrap">
+    <a href="/privacy/">Privacy</a>
+    <a href="/support/">Support</a>
+    <a href="mailto:hello@tjnai.ai">hello@tjnai.ai</a>
+  </div>
 </div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
